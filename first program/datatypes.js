@@ -1,4 +1,4 @@
-console.log("Welcome to Programming in javaScipt");
+console.log("Welcome to Programming in javaScipt")
 
 name = "Pravin";
 console.log("The name of programmer is : "+name);
@@ -48,3 +48,45 @@ student.age = 21;
 
 console.log("Student Updated Age: "+student["age"]);
 
+let code;
+console.log(code); // Output: undefined
+
+
+// Null is a object 
+let s = null;
+let str = "string";
+let b = 2;
+console.log(s);
+console.log(str,b);
+
+// As a standard js......
+
+"use strict"; // treat all JS code as newer version
+
+// alert( 3 + 3) // we are using nodejs, not browser
+
+console.log(3 
+    +
+     3) // code readability should be high
+
+console.log("Hitesh")
+
+
+let name1 = "hitesh"
+let age1 = 18
+let isLoggedIn = false
+let state;
+
+// number => 2 to power 53
+// bigint
+// string => ""
+// boolean => true/false
+// null => standalone value
+// undefined => 
+// symbol => unique
+
+
+// object
+
+console.log(typeof undefined); // undefined
+console.log(typeof null); // object
