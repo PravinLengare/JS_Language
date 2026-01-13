@@ -29,7 +29,7 @@ console.log(nameN.trim());  // remove the white spaces only
 const url = "https://hitesh.com/hitesh%20choudhary"
 console.log(url.replace('%20','-'))
 console.log(url.includes('sundar'))
-console.log(url.split('%')) // based on the input it will split the values in the array 
+console.log(url.split('%')) // based on the input it will split the values in the array but that checking char will not come in the array 
 
 
 
