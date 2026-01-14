@@ -57,5 +57,24 @@ console.log(Object.values(users));
 console.log(tinderUser.hasOwnProperty('age'));
 
 
+/**
+ * Object de-structuring with the array of objects 
+ * It allows you to unpack the values of the object
+ * We can assign or set the property if needed 
+ */
+
+const course = {
+    name:"pravin",
+    coursename : "js in hindi",
+    price : "999"
+}
+
+const {name:nameas,price,coursename,isActive = false} = course
+console.log(nameas);
+console.log(price);
+console.log(isActive);
+
+
+
 
 

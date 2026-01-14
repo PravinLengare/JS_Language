@@ -44,6 +44,9 @@ console.log(`The splice is ${arr.splice(0,3)}`);
  * slice is immutable and splice is mutable 
  */ 
 
+/**
+ * after the splice the part of that slice will be removed from the array and remainig part will remain
+*/
 
 console.log("A ", arr);
 
@@ -54,9 +57,8 @@ console.log("B ", arr);
 
 
 const myn2 = arr.splice(1, 3)
-console.log("C ", arr);  /**
-    * after the splice the part of that slice will be removed from the array and remainig part will remain
-*/
+console.log("C ", arr);  
+
 console.log(myn2);
 
 
