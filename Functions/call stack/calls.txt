@@ -1,0 +1,89 @@
+--- Js Execution ---
+1 . Gloabal Execution Context 
+    - js create the global context and pushes to call stack .
+
+
+2 . Memory Phase
+    - engine scans the code and allocates the memory to each variables.
+    - for the var it allocate and assign the => undefined value .
+    - for the function defination will be stored .
+    
+
+3 . Execution Phase (Running)
+    - Now engine runs line by line 
+    - variable changes from the undefined to value which assigned by coder 
+    - function calls
+
+-- NOTE : FOR EVERY FUNCTION CALL THERE WILL BE NEW EXECUTION CONTEXT IT HAS : - 
+
+        ----------------------|
+        |   new envir var     |         == > for every function this will be create and then it returns the value to gloabl   
+        |         +           |             and then delete the function
+        |     Execution       |
+        |        Thread       |
+        |-------------------- |
+
+        1. Memory Phase 
+        2. Execution Function
+         
+            1. Pass Arguments: num1 becomes 10, num2 becomes 20.
+
+            2. Calculation: total = 10 + 20. total becomes 30.
+
+            3. Return: The function returns 30 to the Global Context.
+
+            4. Destroy: The Function Execution Context is deleted (popped off the stack).
+
+
+IMP : The Call Stack (The Manager)
+
+        - To keep track of all these contexts (Global, Function 1, Function 2), JavaScript uses a Call Stack.
+        
+        1. Start: Global Context enters the stack.
+
+        2. Call addNum(): addNum Context is pushed on top.
+
+        3. Function Finish: addNum Context is popped out (deleted).
+
+            End: When the file is done, Global Context is popped.
+
+Key Rule: 
+==========> JavaScript is Single Threaded. It has only one Call Stack. 
+            It can only do one thing at a time. It cannot run addNum and the Global code simultaneously.
+
+1. What is inside the Global Context?
+When the GEC is created, JavaScript automatically gives you two powerful tools for free:
+
+The Global Object:
+
+    > In Browsers: It is called window.
+
+    > In Node.js: It is called global.
+
+The this Keyword:
+
+    > In the Global Context, this is equal to the Global Object.
+
+    this === window (True).
+
+
+2. How it works (The Lifecycle)
+Every JavaScript file runs inside this context.
+
+    > Creation: As soon as you load a JS file, the engine creates the GEC.
+
+    > Memory Phase: It scans for all variables declared outside of functions and sets them to undefined. It stores globally declared functions.
+
+    > Execution Phase: It executes your top-level code line-by-line.
+
+    > Function Calls: If your global code calls a function add(), a new execution context is stacked on top of the Global Context.
+
+    > Termination: The GEC is only destroyed when you quit the application.
+
+
+Feature	  Browser Environment	 Node.js Environment
+Global 
+Object	        window	                    global
+this Value	    window	                    {} (Empty Object) in top-level code
+Global 
+Variables	   var x = 10 attaches to window.x   var x = 10 does NOT attach to global (Node wraps files in modules).
