@@ -87,3 +87,21 @@ Object	        window	                    global
 this Value	    window	                    {} (Empty Object) in top-level code
 Global 
 Variables	   var x = 10 attaches to window.x   var x = 10 does NOT attach to global (Node wraps files in modules).
+
+HOISTING IN JS :- 
+ - we can assign the value after the function call .
+ - Hoisting is a behavior in JavaScript where variable and function declarations appear
+   to be "moved" to the top of their scope before the code is executed.
+
+Three types of hoisting in js : 
+
+ 1. var hoisting 
+ 2. function hoisting 
+ 3. let and const Hoisting (The Safe One)
+    Variables declared with let and const ARE hoisted, but they are placed in a Temporal Dead Zone (TDZ).
+
+    Result: If you try to access them before the declaration line, you get a ReferenceError.
+
+    This is good! It prevents bugs by forcing you to declare variables before using them.  
+
+    

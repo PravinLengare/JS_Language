@@ -31,3 +31,10 @@
     console.log("DB CONNECTD",name);
     
 }) ('Pravin')
+
+
+// console.log(y);
+// let y = 10
+console.log(z);
+const z = 10
+
