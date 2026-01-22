@@ -10,18 +10,31 @@
     <button id="stop">Stop</button>
 </body>
 <script>
-    const sayHitesh = function(){
-        console.log("Hitesh");
-    }
-    const changeText = function(){
-        document.querySelector('h1').innerHTML = "best JS series"
-    }
+    // const sayHitesh = function(){
+    //     console.log("Hitesh");
+    // }
+    // const changeText = function(){
+    //     document.querySelector('h1').innerHTML = "best JS series"
+    // }
 
-    const changeMe = setTimeout(changeText, 2000)
+    // const changeMe = setTimeout(changeText, 2000)
 
-    document.querySelector('#stop').addEventListener('click', function(){
-        clearTimeout(changeMe)
-        console.log("STOPPED")
-    })
+    // document.querySelector('#stop').addEventListener('click', function(){
+    //     clearTimeout(changeMe)
+    //     console.log("STOPPED")
+    // })
+    const changeMe = function(){
+        document.querySelector('h1').innerHTML = "Js best series"
+    }
+    const change = setTimeout(changeMe,3000)
+    
+    
+     document.querySelector('#stop').addEventListener('click',()=>{
+            clearTimeout(change)
+            console.log("Changed !!!!");
+            
+        })
+    
+    
 </script>
 </html>
