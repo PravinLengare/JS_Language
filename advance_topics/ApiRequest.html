@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            border: 1px solid #db3e3e;
+            border-radius: 8px;
+            padding: 16px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(120, 92, 92, 0.1);
+            margin: 20px auto;
+        }
+        .card-img {
+            width: 100%;
+            border-radius: 80%;
+        }
+        .card-content {
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body style="background-color: #756a6a;">
+    0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete.
+
+    <div class="card" id="userCard" style="display:none;">
+        <img src="" alt="User Avatar" class="card-img" id="userAvatar">
+        <div class="card-content">
+            <h4 id="userId"></h4>
+            <p id="userFollowers"></p>
+        </div>
+    </div>
+</body>
+<script>
+     const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET',requestUrl)
+    console.log("ready");
+    xhr.onreadystatechange = function(){
+         console.log(xhr.readyState);  
+         if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data);
+            
+            
+            const followers = data.followers
+            const id = data.id
+            const photo = data.avatar_url
+            console.log(followers ,id,photo);
+            
+            // Display the user information in the card
+            document.getElementById('userAvatar').src = photo;
+            document.getElementById('userId').innerText = 'User ID: ' + id;
+            document.getElementById('userFollowers').innerText = 'Followers: ' + followers;
+            document.getElementById('userCard').style.display = 'block';
+          
+            
+        
+            
+         }     
+    }
+   
+    
+    
+    xhr.send()
+</script>
+</html>
