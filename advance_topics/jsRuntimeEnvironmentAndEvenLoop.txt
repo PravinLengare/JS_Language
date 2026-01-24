@@ -1,0 +1,84 @@
+JS RUNTIME ENVIRONMENT & EVENT LOOP DIAGRAM DATA
+
+1. JS ENGINE (Main Container)
+   - Memory Heap: Used for memory allocation.
+   - CALL STACK: Manages execution contexts.
+     * Hierarchy (Bottom to Top): Global -> fn -> fn -> fn
+     * The stack makes a "call" to the Web API when asynchronous tasks are encountered.
+
+2. Web API (Browser Environment)
+   - Handles asynchronous operations outside the JS Engine.
+   - Includes:
+     * DOM API
+     * Set timeout
+     * Set interval
+     * fetch()
+   - Process: Tasks like 'Set timeout' move to 'Register CALLBACK'.
+
+3. QUEUES (Callback Management)
+   - Microtask Queue (indicated by the blue boxes/CB): 
+     * Usually handles higher priority tasks like Promises/fetch() callbacks.
+   - Task Queue (indicated by the white boxes/CB): 
+     * Handles standard callbacks like setTimeout or setInterval.
+
+4. EVENT LOOP
+   - The mechanism that monitors the Call Stack and the Queues.
+   - Action: "Add to CALL Stack" 
+   - Rule: When the Call Stack is empty, the Event Loop pushes the next callback (CB) from the queue into the stack for execution.
+
+
+
+JAVASCRIPT RUNTIME & ASYNCHRONOUS ARCHITECTURE
+
+---------------------------------------------------
+SECTION 1: JS RUNTIME ENVIRONMENT (From Diagram 1)
+---------------------------------------------------
+
+1. JS ENGINE
+   - Memory Heap: Storage for variables and objects.
+   - CALL STACK:
+     * Executes code sequentially (Global -> fn -> fn).
+     * Handles synchronous tasks.
+     * When an async function is encountered, it calls the Web API.
+
+2. WEB API (Browser Capabilities)
+   - Handles tasks that JS cannot do natively.
+   - Includes: DOM API, setTimeout, setInterval, fetch().
+   - Workflow:
+     * 'setTimeout' triggers a timer, then moves to "Register CALLBACK".
+     * 'fetch()' handles network requests and routes to the Priority Queue (Microtask).
+
+3. THE QUEUES (Holding Area)
+   - Microtask Queue (Blue Box):
+     * Receives callbacks from Promises (e.g., fetch).
+     * Has higher priority than the Task Queue.
+   - Task Queue (White Box):
+     * Receives standard callbacks (e.g., from setTimeout).
+     * Holds "CB" (Callback) functions waiting for execution.
+
+4. THE EVENT LOOP
+   - The "Watcher" process.
+   - Condition: Checks if the Call Stack is empty.
+   - Action: If empty, it pushes the first Callback (CB) from the Queue into the Call Stack.
+
+---------------------------------------------------
+SECTION 2: FETCH & PROMISE EXECUTION (From Diagram 2)
+---------------------------------------------------
+
+Statement: response = fetch('something')
+
+When `fetch` is executed, two things happen simultaneously:
+
+A. IN JAVASCRIPT MEMORY (Immediate)
+   - A Special Object (Promise) is reserved in memory.
+   - Properties of this object:
+     1. Data: (Initially undefined, waits for value)
+     2. Onfulfilled: [ ] (Array for success callbacks)
+     3. on Rejection: [ ] (Array for failure callbacks)
+   - This object is immediately returned to Global Memory as the variable `response`.
+
+B. IN WEB BROWSER / NODE (Background)
+   - A Network Request is triggered handles by the Browser/Node APIs.
+   - Outcome:
+     * Checkmark (Success) or Cross (Failure).
+   - Linking: Once the network request finishes, it automatically updates the `Data` property inside the Promise object in Memory.   

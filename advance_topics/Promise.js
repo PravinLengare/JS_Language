@@ -59,3 +59,56 @@ promiseFour.then((user)=>{
     
 })
 .finally(()=> console.log("The promise is either resolved or rejected"))
+
+/**
+ * Promise five for the extra concepts
+ * like it will resolve means fulfilled and then reject means failed to promise
+ */
+const promiseFive = new Promise(function(resolve,reject){
+    setTimeout(() => {
+        let error = true
+        if (!error) {
+            resolve({username: "javascript", password: "123"})
+        } else {
+            reject('ERROR: JS went wrong')
+        }
+    }, 1000);
+});
+async function consumePromiseFive() {
+    try{
+        const response = await promiseFive
+        console.log(response);
+        
+    }catch(error){
+        console.log(error);
+        
+    }
+    
+}
+consumePromiseFive()
+
+// fetch('https://api.github.com/users/hiteshchoudhary')
+// .then((response)=>{
+//     return response.json()
+// })
+// .then((data)=>{
+//     console.log(data);
+    
+// })
+// .catch((error)=>{
+//     console.log(error);
+    
+// })
+
+async function getusers() {
+    try{
+        const response = await fetch('https://api.github.com/users/hiteshchoudhary')
+        const data = await response.json()
+        console.log(data);
+        
+    }catch(error){
+        console.log(error);
+        
+    }
+}
+getusers()
