@@ -1,3 +1,8 @@
+/**
+ * Js is prototype language
+ * It is oops but since the 2015 it introduced the oop concept in the js
+ */
+
 const user = {
     username: 'Pravin',
      loginCount: 8,
@@ -15,6 +20,8 @@ const user = {
 
 /**
  * This is special type of function used to initialize the values of the objects 
+ * This special function called the constuctor in the programming 
+ * so , oops is the paradigm in programming only so some languages work on the oops and some of them works on the funtional programming
  */
 function User(username,loginCount,isLoggedIn){
     this.username = username
