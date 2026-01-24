@@ -1,3 +1,11 @@
+/**
+ * Promise is the object in the javascript which returns the resovle or reject upon the request 
+ * it gives the promise to user that something will get as a resoponse but in the future 
+ * It has three states fullfilled , pending and rejected ..
+ * By this we can use it by the two ways 
+ * 1. then and catch and finally 
+ * 2. try catch block by using the await and asynch keywords
+ */
 const promiseOne = new Promise(function(resolve,reject){
     setTimeout(() => {
         console.log('Async tasks 1');
@@ -100,6 +108,17 @@ consumePromiseFive()
     
 // })
 
+/**
+ * An async function is a modern JavaScript feature (introduced in ES2017) that makes working with asynchronous code (like fetch) much easier and cleaner.
+ * 1. It automatically ensures the function returns a Promise.
+ * 2. It allows you to use the await keyword inside it.
+ * After the asynch keyword and await we have to handle the code in the try and catch block
+ * 
+ * - async: "I promise this function will handle asynchronous tasks."
+
+ * - await: "Pause here until the data is ready."
+
+ */
 async function getusers() {
     try{
         const response = await fetch('https://api.github.com/users/hiteshchoudhary')
