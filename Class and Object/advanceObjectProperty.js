@@ -4,6 +4,7 @@
 
 /**
  * It gives the properties of the object is it writable , iterable and all like 
+ * By this we can get what to do on this object 
  */
 const decriptor = Object.getOwnPropertyDescriptor(Math,"PI")
 console.log(decriptor);
