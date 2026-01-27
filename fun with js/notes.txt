@@ -1,0 +1,8 @@
+Lexical Scope and Closure 
+
+Summary :- 
+What is it? A function bundled with its lexical environment.
+
+Key Feature: It remembers variables from its parent scope even after the parent has returned.
+
+Why use it? For data privacy (encapsulation) and functional programming patterns like currying.
