@@ -1,4 +1,5 @@
---- Js Execution ---
+                                   ------------- Js Execution --------------
+
 1 . Gloabal Execution Context 
     - js create the global context and pushes to call stack .
 
