@@ -1,0 +1,37 @@
+DOM -> DOCUMENT OBJECT MODEL 
+    - The DOM (Document Object Model) is the bridge between your HTML code and JavaScript.
+
+* HTML is only text and static
+* dom is dynamic and live 
+
+NOTE : When a browser (like Chrome) loads your page, it takes your HTML and converts it into a giant Tree of Objects called the DOM.
+       JavaScript cannot modify the text file (HTML), but it can modify this Tree.
+
+The Tree Structure --> 
+The DOM organizes everything in a hierarchical tree.
+
+    Root: The document object.
+
+    Branches: The tags (Elements) like <body>, <div>, <ul>.
+
+    Leaves: The content (Text nodes) like "Hello World".
+
+
+Why is it called an "Object Model"?
+   - Because every single part of your HTML is turned into a JavaScript Object
+
+   const h1 = {
+    tagName: "H1",
+    id: "title",
+    innerText: "Hello",
+    style: { color: "black", fontSize: "2em" },
+    // ... hundreds of other properties
+
+    }
+    Because it is an object, JavaScript can easily say h1.style.color = "red".
+
+The DOM is an API -->
+    The DOM is technically an API (Application Programming Interface).
+    It provides a set of methods (like .getElementById, .querySelector,
+    .appendChild) that allows scripts to update the content, 
+    structure, and style of a document while it is currently being viewed.
