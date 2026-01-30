@@ -61,6 +61,9 @@
         //     document.body.style.backgroundColor = `green`
         // }
         
+        // You need to pass a Function Reference to onclick, not a result.
+
+        // The closure allows you to "pre-configure" the function with the correct variable (color) but delay its execution until the user actually clicks.
 
         // it returns the lexical scope of the function 
         function clickHandler(color){

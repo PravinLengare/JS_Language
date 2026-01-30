@@ -6,3 +6,10 @@ What is it? A function bundled with its lexical environment.
 Key Feature: It remembers variables from its parent scope even after the parent has returned.
 
 Why use it? For data privacy (encapsulation) and functional programming patterns like currying.
+
+
+1. Lexical Scope is the Rule: 
+    "The child function is allowed to see the parent's variables."
+
+2. Closure is the Mechanism: 
+    "The child function remembers those variables even if the parent function dies."
