@@ -37,3 +37,23 @@ console.log(url.split('%')) // based on the input it will split the values in th
 
 
 
+/**
+ * 1. Theory of slice() (The Observer)
+    Concept: Immutability.
+
+    Theory: slice follows the principle of Pure Functions. It takes an input (the array), performs an operation (selecting elements), and produces a new output without modifying the original input. It creates a Shallow Copy of the selected portion.
+
+    Use Case: When you want to use data without risking side effects or bugs caused by changing the original source (common in React/Redux).
+
+    2. Theory of splice() (The Modifier)
+    Concept: Mutability.
+
+    Theory: splice follows the Imperative programming model. It operates directly on the memory address of the array, performing In-Place modification. It is efficient because it doesn't create a full copy, but it is "destructive" because the original state is lost forever.
+
+    Use Case: When memory efficiency is critical and you need to manage a list dynamically (like a playlist queue) where the old state doesn't matter.
+
+Summary
+    Slice = Creation (New Array).
+
+    Splice = Modification (Same Array).
+ */
