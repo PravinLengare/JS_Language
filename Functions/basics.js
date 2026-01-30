@@ -48,13 +48,16 @@ function handledObject(anyobject){
 console.log(handledObject(users));
 
 
-function cartValues(var1,var2,...num1){
+function cartValues(var1,var2,...num1){  // acts like spread seperator operator 
+    console.log(typeof num1);
+    
     return num1;
 }
 
-console.log(cartValues(234,44,455))
+console.log(cartValues(234,44,40))
 
 const myNewArray = [200, 400, 100, 600]
+
 
 function returnSecondValue(getArray){
     return getArray[1]
