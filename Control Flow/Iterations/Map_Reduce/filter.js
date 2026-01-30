@@ -6,7 +6,7 @@ const values = coding.forEach( (item) => {
 
 console.log(values);
 /**
- * From this for each method we did not get the value back so we the filter instead
+ * From this for each method we did not get the value back as return result ,so we use the filter instead
  */
 
 const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
