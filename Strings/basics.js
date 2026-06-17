@@ -1,3 +1,4 @@
+/*
 const name = "pravin"
 const s = 50;
 // dont use this instead use string interpolation
@@ -24,12 +25,69 @@ console.log(nameN.slice(-8,2));
 
 */
 
+/*
+
 console.log(nameN.trim());  // remove the white spaces only
 
 const url = "https://hitesh.com/hitesh%20choudhary"
 console.log(url.replace('%20','-'))
 console.log(url.includes('sundar'))
 console.log(url.split('%')) // based on the input it will split the values in the array but that checking char will not come in the array 
+
+*/
+
+
+const name1 = "pravin"
+console.log(name1)
+console.log(typeof name1);
+
+
+const name = new String('Pravin')
+console.log(name);
+console.log(typeof name);
+
+console.log(`My name is ${name1} and my capital name is ${name}`);
+
+console.log(name1.length);
+console.log(name1.charAt(2));
+console.log(name1.indexOf('a'));
+console.log(name.toLowerCase());
+console.log(name1.includes('pa')); // it takes continuous values to match
+console.log(name1[2]);
+console.log(name.__proto__);
+
+const k = " Amol        "
+console.log(k);
+console.log(k.trim());
+
+const j = "lengarepravin115@gmail.com"
+console.log(j.split('@'));
+
+
+//console.log(name1.substring(-6,3));
+console.log(name1.slice(-4,2));  // first it convert into the len + (-4) and then slice(2,2) so results in empty string
+
+console.log(name1.slice(-5));
+console.log(name1.substring(-4)); // it treats negative value as zero
+
+console.log(name1.substring(3,2)); // if st > en it swaps the numbers
+console.log(name1.slice(3,2));  // empty string because start > end
+
+// console.log(name1.splice(2,4)); it is an array method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -38,7 +96,7 @@ console.log(url.split('%')) // based on the input it will split the values in th
 
 
 /**
- * 1. Theory of slice() (The Observer)
+ * 1. Theory of slice() :-
     Concept: Immutability.
 
     Theory: slice follows the principle of Pure Functions. It takes an input (the array), performs an operation (selecting elements), and produces a new output without modifying the original input. It creates a Shallow Copy of the selected portion.
