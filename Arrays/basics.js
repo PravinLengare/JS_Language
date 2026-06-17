@@ -15,6 +15,8 @@ console.log(arr);
 console.log(arr.includes(4));
 console.log(arr.indexOf(4));
 
+console.log(arr);
+
 console.log(arr.join());
 
 /**
