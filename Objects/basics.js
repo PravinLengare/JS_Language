@@ -2,24 +2,87 @@
 // Object.create
 
 // object literals
-const mySy = Symbol("key1")
-console.log(typeof mySy);
+/**
+ * if we declare the object as the literal then it will not produce the singleton 
+ * but if we declare it as constructor then singleton object creates
+ */
 
-const myUser = {        // object literal
-    name: "Hitesh",
-    [mySy] : "New symbol",
-    "full name": "Pravin Lengare",
-    "college":"JSPM",
-    age: 18,
-    location: "Jaipur",
-    email: "hitesh@google.com",
-    isLoggedIn: false,
-    lastLoginDays: ["Monday", "Saturday"]
+const mySy = Symbol("mykey1")
+console.log(mySy);
+
+
+const user = {
+    name1 : "Pravin",
+    education : "Btech",
+    "name3 k" : "Amol",
+    [mySy] : "mykey2",
+    user2 : {
+        name : "u_Pravin",
+        education1 : "10th"
+    }
 }
-console.log(myUser.age);
-console.log(myUser["full name"]);
-console.log(myUser["college"]);
-console.log(myUser["mySy"]);
+console.log(user.name1);
+console.log(user.education);
+console.log(user["name1"]);
+console.log(user["name3 k"]);
+
+console.log(user[mySy]);
+
+// -------- Changing the object properties -----------------
+
+user.education = "BTech pursuing"
+console.log(user.education);
+
+Object.freeze(user)
+
+user.education = "Commerce"
+console.log(user.education);
+console.log(user);
+
+user.user2.name = "Amol"
+user.user2.education1 = "Btech"
+console.log(user.user2.name);
+console.log(user.user2.education1);
+
+
+
+
+// user.greet = function(){
+//     console.log("Hello From Pravin");
+
+// }
+// console.log(user.greet());
+// console.log(user.greet);
+
+// user.greet = function(name1){
+//     console.log(`This is message from this object ${this.name1}`);
+    
+// }
+// console.log(user.greet());
+
+
+
+
+
+
+// const mySy = Symbol("key1")
+// console.log(typeof mySy);
+
+// const myUser = {        // object literal
+//     name: "Hitesh",
+//     [mySy] : "New symbol",
+//     "full name": "Pravin Lengare",
+//     "college":"JSPM",
+//     age: 18,
+//     location: "Jaipur",
+//     email: "hitesh@google.com",
+//     isLoggedIn: false,
+//     lastLoginDays: ["Monday", "Saturday"]
+// }
+// console.log(myUser.age);
+// console.log(myUser["full name"]);
+// console.log(myUser["college"]);
+// console.log(myUser["mySy"]);
 
 // // JsUser.email = "hitesh@microsoft.com"
 // JsUser.email = "hitesh@chatgpt.com"
@@ -38,15 +101,15 @@ console.log(myUser["mySy"]);
 
  */
 
-myUser.greeting = function(){
-    console.log("Hello JS user");
-}
-myUser.greeting = function(name){
-    console.log(`Hello JS user ,${myUser.name}`);
-}
+// myUser.greeting = function(){
+//     console.log("Hello JS user");
+// }
+// myUser.greeting = function(name){
+//     console.log(`Hello JS user ,${myUser.name}`);
+// }
 
 
-console.log(myUser.greeting());
+// console.log(myUser.greeting());
 
 
 
