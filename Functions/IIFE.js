@@ -30,11 +30,20 @@
 ((name) =>{
     console.log("DB CONNECTD",name);
     
-}) ('Pravin')
+}) ('Pravin');
 
 
-// console.log(y);
-// let y = 10
-console.log(z);
-const z = 10
+// // console.log(y);
+// // let y = 10
+// console.log(z);
+// const z = 10
 
+(function name(){
+    console.log("My first IIfe!");
+    
+})();
+
+( () => {
+    console.log("My Second IIfe!");
+    
+}) ()
