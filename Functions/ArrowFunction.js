@@ -51,3 +51,44 @@ chai()
 const two = (num1,num2) => ( {user:"Pravin"} )
 console.log(two(2,3));
 
+
+
+
+function chaii(){
+    console.log("I am chai !");
+    
+}
+chaii()
+
+const chai2 = function(){
+    console.log("I am chai 2!");
+}
+chai2()
+
+const fun =  (k) => {
+    console.log("I am Pravin !");
+    console.log(k);
+}
+
+fun(2)
+
+const add = (num1,num2) => {
+    return num1 + num2
+}
+const add1 = (num1,num2) => (num1 + num2)       // implicit return
+
+const username = {
+    a : "Pravin"
+}
+
+const user1 = () => ({username})
+
+console.log(add1(2,3));
+console.log(user1());
+
+
+const p = function(){
+    console.log(this);
+    
+}
+p()
