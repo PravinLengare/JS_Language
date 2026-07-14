@@ -16,6 +16,10 @@ const newNums = myNums.filter( (num) => {
 } )
 console.log(newNums);
 
+// const newNum = myNums.filter( (num) => num > 7)
+// console.log(newNum);
+
+
 const newNum = []
 myNums.forEach((val)=>{
     if(val < 4)
@@ -23,7 +27,7 @@ myNums.forEach((val)=>{
 })
 console.log(newNum);
 
-// accessing the objects
+// accessing the array of objects
 const books = [
     { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
     { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
@@ -43,6 +47,10 @@ result = books.filter( (bk) => {
     return bk.genre === 'History' && bk.edition === 2007
 })
 console.log(result);
+
+let result2 = books.filter( (book) => book.genre === 'Science'&& book.edition === 2016)
+console.log(result2);
+
 
 
 
