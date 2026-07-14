@@ -1,28 +1,48 @@
 const coding = ["js", "ruby", "java", "python", "cpp"]
 
-coding.forEach(function(val){
+coding.forEach( function (val){
     console.log(val);
     
 })
-console.log("Using the arrow function");
-
-coding.forEach( (val) => {
+coding.forEach( (val) =>{
     console.log(val);
     
 })
+coding.forEach( (val,index,arr) => {
+    console.log(val,index,arr);
+    
+})
 
-function printMe(item){
-    console.log(item);
+function name(name1){
+    console.log(name1);
+    
 }
+coding.forEach(name)
+
+
+// coding.forEach(function(val){
+//     console.log(val);
+    
+// })
+// console.log("Using the arrow function");
+
+// coding.forEach( (val) => {
+//     console.log(val);
+    
+// })
+
+// function printMe(item){
+//     console.log(item);
+// }
 /**
  * only pass the ref do not pass function
  */
-coding.forEach(printMe)
+// coding.forEach(printMe)
 
-coding.forEach((item,index,arr)=>{
-    console.log(item,index,arr);
+// coding.forEach((item,index,arr)=>{
+//     console.log(item,index,arr);
     
-})
+// })
 
 /**
  * Array of objects 
