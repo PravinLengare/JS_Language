@@ -8,7 +8,6 @@
 </head>
 <body style="background-color: #212121; color: #fff;">
     <div class="parent">
-        <!-- this is a comment -->
         <div class="day">Monday</div>
         <div class="day">Tuesday</div>
         <div class="day">Wednesday</div>
@@ -16,28 +15,56 @@
     </div>
 </body>
 <script>
-    
     const parent = document.querySelector('.parent')
     console.log(parent);
     console.log(parent.children);
+
     console.log(parent.children[2]);
     console.log(parent.children[1].innerHTML);
 
     for (let index = 0; index < parent.children.length; index++) {
         console.log(parent.children[index].innerHTML);
-            
+        
     }
-    parent.children[2].style.color = "orange"
-
+    parent.children[2].style.color = "red"
     console.log(parent.firstElementChild);
     console.log(parent.lastElementChild);
+    
+    
+    const dayone = document.querySelector('.day')
+    console.log(dayone);
+    console.log(dayone.parentElement);
+    console.log(dayone.nextElementSibling);
+    console.log("NODEs",parent.childNodes);
+    
+    
+    
+    
+    dayone.style.color = 'red'
+    
+    
+    // const parent = document.querySelector('.parent')
+    // console.log(parent);
+    // console.log(parent.children);
+    // console.log(parent.children[2]);
+    // console.log(parent.children[1].innerHTML);
 
-    const dayOne = document.querySelector('.day')
-    console.log(dayOne);
-    console.log(dayOne.parentElement);
-    console.log(dayOne.nextElementSibling);
+    // for (let index = 0; index < parent.children.length; index++) {
+    //     console.log(parent.children[index].innerHTML);
+            
+    // }
+    // parent.children[2].style.color = "orange"
 
-    console.log("NODES: ", parent.childNodes);  
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    // const dayOne = document.querySelector('.day')
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement);
+    // console.log(dayOne.nextElementSibling);
+
+    // console.log("NODES: ", parent.childNodes);  
+
     
 </script>
 </html>
